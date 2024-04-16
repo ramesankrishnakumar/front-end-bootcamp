@@ -1,0 +1,60 @@
+### experience a node package
+1. npx http-server
+
+### init node package manager
+2. npm init
+
+Add a dependency 
+3. npm install http-server
+
+### vite
+npm create vite@latest vite-front-end
+
+```
+git fetch
+git switch dev-app
+git pull
+git switch [your branch]
+git merge dev-app
+
+I think that should bring you up to date
+(dev-app is where we store the app as it stands at the end of each exercise)
+```
+
+
+#### Emmet
+! -> add html 5 
+html.5 -> add html 5
+
+#### #name -> is the Id of the tag
+#### .name -> is the class of the tag
+
+#### html form 
+form submit will send the data to the form action url
+```
+<form action="/processor/index.html" method="POST">
+</form>
+```
+if there is no action attribute it will submitted to the same url
+if there is not method attribute, default is GET
+by default form focus on the submit button, so when you press enter while entering the data will submit the form
+
+label is attached to a form field by using the "id" attribute of the field
+```
+<form>
+<label for="first-name">Enter your first name:</label>
+<input type="text" name="firstname" id="first-name"/>
+</form>
+```
+
+```
+<input type="checkbox" name="topping" value="peppers" id="combined-topping-peppers">
+<input type="checkbox" name="topping" value="sausage" id="combined-topping-sausage">
+<input type="checkbox" name="topping" value="pineapple" id="combined-topping-pineapple">
+```
+
+if you select multiple checkbox multiple items will be sent
+topping=peppers&topping=sausage&topping=pineapple
+
+
+
