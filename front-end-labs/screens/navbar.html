@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Navbar</title>
+		<style>
+			.container {
+				display: flex;
+				justify-content: space-evenly;
+				border: 4px solid black;
+				height: 100px;
+				align-items: center;
+			}
+			.child {
+				height: 30px;
+				width: 200px;
+				border: 2px dotted blue;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="container">
+			<div class="child"><a href="/screens/send-receive.html">Send/Receive</a></div>
+			<div class="child"><a href="/screens/account-settings.html">Account settings</a></div>
+			<div class="child">
+				<a href="/screens/balance.html">Balance</a>
+			</div>
+			<div class="child"><a href="/screens/search.html">Search</a></div>
+			<div class="child"><a href="/screens/split-the-bill.html">Split the bill</a></div>
+			<div class="child"><a href="/index.html">Home</a></div>
+		</nav>
+	</body>
+</html>
