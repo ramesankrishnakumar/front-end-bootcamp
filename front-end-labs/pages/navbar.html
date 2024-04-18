@@ -7,33 +7,82 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Navbar</title>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded"
+			rel="stylesheet"
+		/>
 		<style>
 			.container {
 				display: flex;
 				justify-content: space-evenly;
-				border: 4px solid black;
-				/* height: 100px; */
+				/* border: 4px solid black; */
 				align-items: center;
 			}
 			.child {
-				/* height: 30px; */
-				/* width: 200px; */
-				border: 2px dotted blue;
-				flex: 1;
+				/* border: 2px dotted blue; */
+				/* flex: 1; */
 				text-align: center;
+				padding: 10px;
+			}
+
+			.child:hover {
+				border-radius: 15px;
+				background-color: rgb(124, 112, 188);
+			}
+			body {
+				font-family: 'Roboto Serif', serif;
+			}
+			.child {
+				color: blue;
+				transition-property: background-color;
+				transition-duration: 1s;
+				transition-timing-function: ease-in;
+			}
+			.child-icons {
+				font-size: 30px;
 			}
 		</style>
 	</head>
 	<body>
+		<h1>The ZipPay app</h1>
 		<nav class="container">
-			<div class="child"><a href="/pages/send-receive.html">Send/Receive</a></div>
-			<div class="child"><a href="/pages/account-settings.html">Account settings</a></div>
 			<div class="child">
+				<span class="material-symbols-rounded child-icons">paid</span>
+				<a href="/pages/send-receive.html">Send/Receive</a>
+			</div>
+			<div class="child">
+				<span class="material-symbols-rounded child-icons">settings</span>
+				<a href="/pages/account-settings.html">Account settings</a>
+			</div>
+			<div class="child">
+				<span class="material-symbols-rounded child-icons">balance</span>
 				<a href="/pages/balance.html">Balance</a>
 			</div>
-			<div class="child"><a href="/pages/search.html">Search</a></div>
-			<div class="child"><a href="/pages/split-the-bill.html">Split the bill</a></div>
-			<div class="child"><a href="/index.html">Home</a></div>
+			<div class="child">
+				<span class="material-symbols-rounded child-icons">search</span>
+				<a href="/pages/search.html">Search</a>
+			</div>
+			<div class="child">
+				<span class="material-symbols-rounded child-icons">settings</span>
+				<a href="/pages/split-the-bill.html">Split the bill</a>
+			</div>
+			<div class="child">
+				<span class="material-symbols-rounded child-icons">home</span>
+				<a href="/index.html">Home</a>
+			</div>
 		</nav>
 	</body>
 </html>
