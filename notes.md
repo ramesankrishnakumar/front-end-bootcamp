@@ -69,11 +69,12 @@ topping=peppers&topping=sausage&topping=pineapple
 
 ### links
 
-1. https://css-tricks.com/snippets/css/complete-guide-grid/
-2. https://cssgrid-generator.netlify.app/
-3. https://flexboxfroggy.com/
-4. https://flukeout.github.io/
-5. https://specifishity.com/
-6. https://cssgridgarden.com/
-7. https://coolors.co/
-8. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting
+1. [css-grid-guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
+2. [grid-generator](https://cssgrid-generator.netlify.app/)
+3. [flexbox-game](https://flexboxfroggy.com/)
+4. [css-selectors](https://flukeout.github.io/)
+5. [css-specificity](https://specifishity.com/)
+6. [css-grid-game](https://cssgridgarden.com/)
+7. [color-pallet](https://coolors.co/)
+8. [css-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting)
+9. [flex-vs-grid](https://blog.logrocket.com/css-flexbox-vs-css-grid/)
