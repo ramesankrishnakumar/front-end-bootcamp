@@ -1,13 +1,16 @@
 import React from 'react';
 
-function PaymentsGridHeader() {
+function PaymentsGridHeader({ columnMap }) {
+	let visibleColumnsMap = columnMap.filter((data) => data.visible);
+	let visibleColumnsCount = visibleColumnsMap.length;
 	return (
-		<div className="pgHeader">
-			<div className="sender">Sender</div>
-			<div className="recipient">Recipient</div>
-			<div className="date">Date</div>
-			<div className="amount">Amount</div>
-			<div className="reason">Reason</div>
+		<div
+			className="pgHeader"
+			style={{ '--column': visibleColumnsCount }}
+		>
+			{visibleColumnsMap.map((data) => (
+				<div key={data.label}>{data.label}</div>
+			))}
 		</div>
 	);
 }
