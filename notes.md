@@ -67,6 +67,25 @@ label is attached to a form field by using the "id" attribute of the field
 if you select multiple checkbox multiple items will be sent
 topping=peppers&topping=sausage&topping=pineapple
 
+
+Yes, every component has to return a single root element. BUT that root element can be either 
+
+<React.Fragment>
+.
+.
+.
+</React.Fragment>
+
+or
+
+<>
+.
+.
+.
+</>
+
+Neither of which generates any HTML. They both are "elements" so that JSX works, and then render nothing to the browser.
+
 ### links
 
 1. [css-grid-guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
