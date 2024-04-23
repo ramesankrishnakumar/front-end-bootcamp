@@ -1,47 +1,30 @@
 import React from 'react';
 import './ProtoPaymentsGrid.css';
-
-/*
-{"id":1,"payorId":"kvecardg","payeeId":"adickha","datePaid":"2022-07-08","amount":10.06,"reason":"📚 Course support"},
-{"id":2,"payorId":"avlachqi","payeeId":"achugg2c","datePaid":"2023-02-05","amount":28.21,"reason":"💵 Payback"},
-{"id":3,"payorId":"adrucekw","payeeId":"nhaskerpd","datePaid":"2023-06-09","amount":21.65,"reason":"📸"},
-{"id":4,"payorId":"epilbury9w","payeeId":"dtrevarthenjt","datePaid":"2023-12-30","amount":46.08,"reason":null},
-{"id":5,"payorId":"dgrzelczykl4","payeeId":"croastr6","datePaid":"2023-01-23","amount":21.82,"reason":"💍 Wedding gift"}
-*/
+import payments from '../../data/payments.json';
 
 function ProtoPaymentsGrid() {
 	return (
 		<section className="pgContainer">
 			{/* Headers */}
-			<div>Sender</div>
-			<div>Recipient</div>
-			<div>Date</div>
-			<div>Amount</div>
-			<div>Reason</div>
-			{/* Row */}
-			<div>pax</div>
-			<div>acastillo</div>
-			<div>2024-04-23</div>
-			<div>55.27</div>
-			<div>Bar bill</div>
-			{/* Row */}
-			<div>pax</div>
-			<div>acastillo</div>
-			<div>2024-04-23</div>
-			<div>55.27</div>
-			<div>Bar bill</div>
-			{/* Row */}
-			<div>pax</div>
-			<div>acastillo</div>
-			<div>2024-04-23</div>
-			<div>55.27</div>
-			<div>Bar bill</div>
-			{/* Row */}
-			<div>pax</div>
-			<div>acastillo</div>
-			<div>2024-04-23</div>
-			<div>55.27</div>
-			<div>Bar bill</div>
+			<div className="pgHeader">
+				<div className="sender">Sender</div>
+				<div className="recipient">Recipient</div>
+				<div className="date">Date</div>
+				<div className="amount">Amount</div>
+				<div className="reason">Reason</div>
+			</div>
+			{payments.map((payment) => (
+				<div
+					className="pgRow"
+					key={payment.id}
+				>
+					<div className="sender">{payment.payorId}</div>
+					<div className="recipient">{payment.payeeId}</div>
+					<div className="date">{payment.datePaid}</div>
+					<div className="amount">{payment.amount}</div>
+					<div className="reason">{payment.reason}</div>
+				</div>
+			))}
 		</section>
 	);
 }
