@@ -1,0 +1,30 @@
+.pgContainer {
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+		source-sans-pro, sans-serif;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		overflow-y: scroll;       
+}
+
+.pgRow, .pgHeader {
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-column: span 5;
+}
+
+.pgHeader > div {
+	font-weight: bold;
+}
+
+.pgHeader {
+	top: 0;
+	border-bottom: 2px solid black;
+	margin-bottom: 5px;
+	position: sticky;
+	background-color: white;
+}
+
+.pgRow:nth-child(odd) {
+	background-color: grey;
+	color: white;
+}
