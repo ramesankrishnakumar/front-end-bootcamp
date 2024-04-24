@@ -16,7 +16,10 @@ function PaymentsGrid() {
 	return (
 		<div className="pgContainer">
 			<PaymentsGridHeader columnMap={columnMap} />
-			{/* <PaymentsGridBody payments={payments} /> */}
+			<PaymentsGridBody
+				columnMap={columnMap}
+				payments={payments}
+			/>
 		</div>
 	);
 }
