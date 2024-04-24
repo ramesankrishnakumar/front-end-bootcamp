@@ -1,16 +1,40 @@
 import React from 'react';
+import PaymentGridHeaderSortIndicator from './PaymentGridHeaderSortIndicator';
 
-function PaymentsGridHeader({ columnMap }) {
-	let visibleColumnsMap = columnMap.filter((data) => data.visible);
-	let visibleColumnsCount = visibleColumnsMap.length;
+function PaymentsGridHeader({ columnMap, sortCallback, sortState }) {
+	// let headers = [];
+	// columnMap.forEach((data) => {
+	// 	headers.push(
+	// 		<div
+	// 			key={data.label}
+	// 			onClick={() => sortCallback(data.field)}
+	// 		>
+	// 			{data.label}
+	// 			&nbsp;
+	// 			<PaymentGridHeaderSortIndicator
+	// 				column={data.field}
+	// 				sortState={sortState}
+	// 			/>
+	// 		</div>,
+	// 	);
+	// });
 	return (
-		<div
-			className="pgHeader"
-			style={{ '--column': visibleColumnsCount }}
-		>
-			{visibleColumnsMap.map((data) => (
-				<div key={data.label}>{data.label}</div>
-			))}
+		<div className="pgHeader">
+			{columnMap.map((data) => {
+				return (
+					<div
+						key={data.label}
+						onClick={() => sortCallback(data.field)}
+					>
+						{data.label}
+						&nbsp;
+						<PaymentGridHeaderSortIndicator
+							column={data.field}
+							sortState={sortState}
+						/>
+					</div>
+				);
+			})}
 		</div>
 	);
 }
