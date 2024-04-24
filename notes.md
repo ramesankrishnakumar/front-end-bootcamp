@@ -98,3 +98,4 @@ Neither of which generates any HTML. They both are "elements" so that JSX works,
 8. [css-nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting)
 9. [flex-vs-grid](https://blog.logrocket.com/css-flexbox-vs-css-grid/)
 10. [React-vs-HTML](https://www.geeksforgeeks.org/attributes-that-work-differently-between-react-and-html/)
+11. [lodash-library](https://lodash.com/docs/4.17.15#orderBy)
