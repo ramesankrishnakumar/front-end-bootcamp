@@ -3,13 +3,17 @@
 		source-sans-pro, sans-serif;
 		display: grid;
 		grid-template-columns: repeat(var(--column), 1fr);
-		overflow-y: scroll;
+		height: 100%;
 }
 
-.pgRow, .pgHeader {
+.pgRow, .pgHeader, .pgBody {
 	display: grid;
 	grid-template-columns: subgrid;
 	grid-column: span var(--column);
+}
+
+.pgBody {
+	overflow-y: scroll;
 }
 
 .pgHeader > div {
@@ -28,3 +32,6 @@
 	background-color: grey;
 	color: white;
 }
+/* .sortIndicator {
+    display: flex;
+} */

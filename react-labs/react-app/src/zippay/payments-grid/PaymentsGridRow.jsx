@@ -4,10 +4,7 @@ function PaymentsGridRow({ payment, columns }) {
 	return (
 		<div className="pgRow">
 			{columns.map((column) => {
-				if (column.visible) {
-					return <div key={column.field}>{payment[column.field]}</div>;
-				}
-				return null;
+				return <div key={column.field}>{payment[column.field]}</div>;
 			})}
 		</div>
 	);
