@@ -86,6 +86,17 @@ or
 
 Neither of which generates any HTML. They both are "elements" so that JSX works, and then render nothing to the browser.
 
+```
+Cursor CSS:
+
+  cursor:
+    url(../assets/cursor_final.png) 4 12,
+    auto;
+Assumes you have an image file in ../assets/cursor_final.png
+
+As long as you put the appropriate image file in a location you can reach, you can use that image as a cursor
+```
+
 ### links
 
 1. [css-grid-guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
