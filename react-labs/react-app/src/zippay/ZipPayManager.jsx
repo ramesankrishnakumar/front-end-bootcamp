@@ -7,6 +7,7 @@ import SendReceive from './send-receive/SendReceive';
 import SplitBill from './split-bill/SplitBill';
 import ZipPaySearch from './search/ZipPaySearch';
 import AccountSettings from './settings/AccountSettings';
+import UserDetailsLookUp from './user-details/UserDetailsLookUp';
 function ZipPayManager() {
 	return (
 		<section className="zippay-main">
@@ -14,24 +15,28 @@ function ZipPayManager() {
 
 			<Routes>
 				<Route
-					path="/send-receive"
+					path="send-receive"
 					element={<SendReceive />}
 				/>
 				<Route
-					path="/split-the-bill"
+					path="split-the-bill"
 					element={<SplitBill />}
 				/>
 				<Route
-					path="/search"
+					path="search"
 					element={<ZipPaySearch />}
 				/>
 				<Route
-					path="/payments-grid"
+					path="payments-grid"
 					element={<PaymentsGrid />}
 				/>
 				<Route
-					path="/settings"
+					path="settings"
 					element={<AccountSettings />}
+				/>
+				<Route
+					path="user-details/:userId"
+					element={<UserDetailsLookUp />}
 				/>
 			</Routes>
 		</section>

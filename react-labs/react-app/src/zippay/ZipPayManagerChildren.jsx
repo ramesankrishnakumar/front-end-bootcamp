@@ -3,10 +3,10 @@ import Navbar from './NavbarChildren';
 import './zippay.css';
 import PaymentsGrid from './payments-grid/PaymentsGrid';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import SendReceive from './SendReceive';
-import SplitBill from './SplitBill';
-import AccountSettings from './AccountSettings';
-import ZipPaySearch from './ZipPaySearch';
+import SendReceive from './send-receive/SendReceive';
+import SplitBill from './split-bill/SplitBill';
+import AccountSettings from './settings/AccountSettings';
+import ZipPaySearch from './search/ZipPaySearch';
 
 function ZipPayManagerChildren() {
 	return (

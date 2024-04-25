@@ -1,0 +1,10 @@
+.profile-top {
+    display: flex;
+    align-items: baseline;
+}
+.profileImage {
+    height: 100px;
+    width: 100px;
+    border-radius: 35px 50px 30px;;
+    border: 2px solid rgb(104, 104, 36)
+}
