@@ -8,7 +8,7 @@ function UserDetailsLookUp() {
 
 	useEffect(() => {
 		async function getData() {
-			let url = 'http://localhost:8006/users';
+			let url = 'http://localhost:8100/users';
 			console.log('creating users store');
 			try {
 				let response = await fetch(url);

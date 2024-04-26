@@ -2,18 +2,27 @@ import React, { useEffect, useState } from 'react';
 import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
 import './PaymentsGrid.css';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	sortDirectionSelector,
+	sortFieldSelector,
+	updateSortField,
+} from './payments-grid-slice';
 
 function PaymentsGrid() {
-	let initialSortState = {
-		sortField: '',
-		sortDirection: '',
-	};
-	const [sortState, setSortState] = useState(initialSortState);
+	let dispatch = useDispatch();
+	let reduxSortField = useSelector(sortFieldSelector);
+	let reduxSortDirection = useSelector(sortDirectionSelector);
+	// let initialSortState = {
+	// 	sortField: '',
+	// 	sortDirection: '',
+	// };
+	// const [sortState, setSortState] = useState(initialSortState);
 	const [payments, setPayments] = useState([]);
 
 	useEffect(() => {
 		async function getData() {
-			let url = 'http://localhost:8006/payments';
+			let url = 'http://localhost:8100/payments';
 			console.log('creating payments store');
 			try {
 				let response = await fetch(url);
@@ -42,6 +51,9 @@ function PaymentsGrid() {
 
 	let visibleColumnsMap = columnMap.filter((data) => data.visible);
 	let columnCount = visibleColumnsMap.length;
+	console.log(
+		`redux sortfield: ${reduxSortField} sortDirection: ${reduxSortDirection}`,
+	);
 
 	return (
 		<div
@@ -51,43 +63,47 @@ function PaymentsGrid() {
 			<PaymentsGridHeader
 				columnMap={visibleColumnsMap}
 				sortCallback={handleHeaderClick}
-				sortState={sortState}
+				sortState={{
+					sortField: reduxSortField,
+					sortDirection: reduxSortDirection,
+				}}
 			/>
 			<PaymentsGridBody
 				columnMap={visibleColumnsMap}
 				payments={payments}
-				sortState={sortState}
+				sortState={{
+					sortField: reduxSortField,
+					sortDirection: reduxSortDirection,
+				}}
 			/>
 		</div>
 	);
 
 	function handleHeaderClick(newSortColumn) {
-		let newSortState = {};
-		let newSortDirection = 'desc';
-		if (sortState.sortField === newSortColumn) {
-			if (sortState.sortDirection === '') {
-				newSortDirection = 'asc';
-			} else if (sortState.sortDirection === 'desc') {
-				newSortDirection = '';
-			}
-			newSortState = {
-				...initialSortState,
-				sortField: sortState.sortField,
-				sortDirection: newSortDirection,
-			};
-			setSortState(newSortState);
-		} else {
-			newSortDirection = 'asc';
-			newSortState = {
-				...initialSortState,
-				sortField: newSortColumn,
-				sortDirection: newSortDirection,
-			};
-			setSortState(newSortState);
-		}
-		// console.log(
-		// 	`newSortDirection: ${newSortState.sortField} ${newSortState.sortDirection === '' ? 'empty' : newSortState.sortDirection}`,
-		// );
+		// let newSortState = {};
+		// let newSortDirection = 'desc';
+		// if (sortState.sortField === newSortColumn) {
+		// 	if (sortState.sortDirection === '') {
+		// 		newSortDirection = 'asc';
+		// 	} else if (sortState.sortDirection === 'desc') {
+		// 		newSortDirection = '';
+		// 	}
+		// 	newSortState = {
+		// 		...initialSortState,
+		// 		sortField: sortState.sortField,
+		// 		sortDirection: newSortDirection,
+		// 	};
+		// 	setSortState(newSortState);
+		// } else {
+		// 	newSortDirection = 'asc';
+		// 	newSortState = {
+		// 		...initialSortState,
+		// 		sortField: newSortColumn,
+		// 		sortDirection: newSortDirection,
+		// 	};
+		// 	setSortState(newSortState);
+		// }
+		dispatch(updateSortField(newSortColumn));
 	}
 }
 
