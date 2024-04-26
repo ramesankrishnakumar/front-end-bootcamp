@@ -13,11 +13,6 @@ function PaymentsGrid() {
 	let dispatch = useDispatch();
 	let reduxSortField = useSelector(sortFieldSelector);
 	let reduxSortDirection = useSelector(sortDirectionSelector);
-	// let initialSortState = {
-	// 	sortField: '',
-	// 	sortDirection: '',
-	// };
-	// const [sortState, setSortState] = useState(initialSortState);
 	const [payments, setPayments] = useState([]);
 
 	useEffect(() => {
@@ -60,14 +55,7 @@ function PaymentsGrid() {
 			className="pgContainer"
 			style={{ '--column': columnCount }}
 		>
-			<PaymentsGridHeader
-				columnMap={visibleColumnsMap}
-				sortCallback={handleHeaderClick}
-				sortState={{
-					sortField: reduxSortField,
-					sortDirection: reduxSortDirection,
-				}}
-			/>
+			<PaymentsGridHeader columnMap={visibleColumnsMap} />
 			<PaymentsGridBody
 				columnMap={visibleColumnsMap}
 				payments={payments}
