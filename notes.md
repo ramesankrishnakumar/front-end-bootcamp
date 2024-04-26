@@ -120,3 +120,4 @@ As your app gets bigger and/or more complex, the likelihood that you need a stat
 12. [robo-images](https://robohash.org/)
 13. [component-life-cycle-deep-dive](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/)
 14. [component-life-cycle](https://julesblom.com/writing/react-hook-component-timeline)
+15. [redux](https://redux.js.org/tutorials/essentials/part-1-overview-concepts#redux-application-data-flow)
