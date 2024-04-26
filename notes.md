@@ -110,3 +110,6 @@ As long as you put the appropriate image file in a location you can reach, you c
 9. [flex-vs-grid](https://blog.logrocket.com/css-flexbox-vs-css-grid/)
 10. [React-vs-HTML](https://www.geeksforgeeks.org/attributes-that-work-differently-between-react-and-html/)
 11. [lodash-library](https://lodash.com/docs/4.17.15#orderBy)
+12. [robo-images](https://robohash.org/)
+13. [component-life-cycle-deep-dive](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/)
+14. [component-life-cycle](https://julesblom.com/writing/react-hook-component-timeline)
