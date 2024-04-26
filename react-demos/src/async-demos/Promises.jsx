@@ -5,7 +5,7 @@ function Promises() {
 
 	// One-time data request
 	useEffect(() => {
-		let url = 'http://localhost:8005/countries';
+		let url = 'http://localhost:8000/countries';
 		// fetch() returns a Promise
 		fetch(url)
 			.then((response) => {

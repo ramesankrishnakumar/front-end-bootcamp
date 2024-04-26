@@ -29,7 +29,7 @@ function GridRemote() {
 	let [countries, setCountries] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:8005/countries')
+		fetch('http://localhost:8000/countries')
 			.then((response) => {
 				if (response.ok) {
 					return response.json();

@@ -1,5 +1,5 @@
 async function getData() {
-	let url = 'http://localhost:8005/countries';
+	let url = 'http://localhost:8000/countries';
 	try {
 		let response = await fetch(url);
 		if (response.ok) {

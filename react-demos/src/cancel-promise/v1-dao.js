@@ -94,7 +94,7 @@ function getAxiosOptions(options) {
 }
 
 // TODO: Pick this up from environment?
-const baseUrl = 'http://localhost:8005/api/v1/banking/people';
+const baseUrl = 'http://localhost:8000/api/v1/banking/people';
 
 const defaultQueryOptions = {
 	withTransactions: false,
