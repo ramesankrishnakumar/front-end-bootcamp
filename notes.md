@@ -97,6 +97,13 @@ Assumes you have an image file in ../assets/cursor_final.png
 As long as you put the appropriate image file in a location you can reach, you can use that image as a cursor
 ```
 
+```
+MobX and Zustand and Apollo as external libraries
+
+useReducer and useContext if you want to use native-to-React state management techniques
+As your app gets bigger and/or more complex, the likelihood that you need a state management system increases.
+```
+
 ### links
 
 1. [css-grid-guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
