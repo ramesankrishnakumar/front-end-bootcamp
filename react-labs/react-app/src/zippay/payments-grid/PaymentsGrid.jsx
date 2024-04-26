@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import payments from '../../../data/payments.json';
+import React, { useEffect, useState } from 'react';
 import PaymentsGridHeader from './PaymentsGridHeader';
 import PaymentsGridBody from './PaymentsGridBody';
 import './PaymentsGrid.css';
@@ -10,6 +9,27 @@ function PaymentsGrid() {
 		sortDirection: '',
 	};
 	const [sortState, setSortState] = useState(initialSortState);
+	const [payments, setPayments] = useState([]);
+
+	useEffect(() => {
+		async function getData() {
+			let url = 'http://localhost:8006/payments';
+			console.log('creating payments store');
+			try {
+				let response = await fetch(url);
+				if (response.ok) {
+					let results = await response.json();
+					setPayments(results);
+				} else {
+					throw new Error(`Bad response: ${response.status}`);
+				}
+			} catch (error) {
+				console.error('async-await: Could not fetch data:', error);
+			}
+		}
+
+		getData();
+	}, []);
 
 	let columnMap = [
 		{ label: 'ID', field: 'id', visible: false },

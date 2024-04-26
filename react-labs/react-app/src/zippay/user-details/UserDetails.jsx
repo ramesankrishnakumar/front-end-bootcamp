@@ -1,5 +1,4 @@
 import React from 'react';
-import profile from '../../assets/user/profile.png';
 
 function UserDetails({ user }) {
 	if (typeof user === 'undefined') {
