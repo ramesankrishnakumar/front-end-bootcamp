@@ -7,33 +7,35 @@ import {
 	sortDirectionSelector,
 	sortFieldSelector,
 	updateSortField,
-} from './payments-grid-slice';
+} from './SortStateSlice';
+import { paymentsSelector } from './PaymentsSlice';
 
 function PaymentsGrid() {
 	let dispatch = useDispatch();
 	let reduxSortField = useSelector(sortFieldSelector);
 	let reduxSortDirection = useSelector(sortDirectionSelector);
-	const [payments, setPayments] = useState([]);
+	let reduxPayments = useSelector(paymentsSelector);
+	// const [payments, setPayments] = useState([]);
 
-	useEffect(() => {
-		async function getData() {
-			let url = 'http://localhost:8100/payments';
-			console.log('creating payments store');
-			try {
-				let response = await fetch(url);
-				if (response.ok) {
-					let results = await response.json();
-					setPayments(results);
-				} else {
-					throw new Error(`Bad response: ${response.status}`);
-				}
-			} catch (error) {
-				console.error('async-await: Could not fetch data:', error);
-			}
-		}
+	// useEffect(() => {
+	// 	async function getData() {
+	// 		let url = 'http://localhost:8100/payments';
+	// 		console.log('creating payments store');
+	// 		try {
+	// 			let response = await fetch(url);
+	// 			if (response.ok) {
+	// 				let results = await response.json();
+	// 				setPayments(results);
+	// 			} else {
+	// 				throw new Error(`Bad response: ${response.status}`);
+	// 			}
+	// 		} catch (error) {
+	// 			console.error('async-await: Could not fetch data:', error);
+	// 		}
+	// 	}
 
-		getData();
-	}, []);
+	// 	getData();
+	// }, []);
 
 	let columnMap = [
 		{ label: 'ID', field: 'id', visible: false },
@@ -58,7 +60,7 @@ function PaymentsGrid() {
 			<PaymentsGridHeader columnMap={visibleColumnsMap} />
 			<PaymentsGridBody
 				columnMap={visibleColumnsMap}
-				payments={payments}
+				payments={reduxPayments}
 				sortState={{
 					sortField: reduxSortField,
 					sortDirection: reduxSortDirection,
@@ -66,33 +68,6 @@ function PaymentsGrid() {
 			/>
 		</div>
 	);
-
-	function handleHeaderClick(newSortColumn) {
-		// let newSortState = {};
-		// let newSortDirection = 'desc';
-		// if (sortState.sortField === newSortColumn) {
-		// 	if (sortState.sortDirection === '') {
-		// 		newSortDirection = 'asc';
-		// 	} else if (sortState.sortDirection === 'desc') {
-		// 		newSortDirection = '';
-		// 	}
-		// 	newSortState = {
-		// 		...initialSortState,
-		// 		sortField: sortState.sortField,
-		// 		sortDirection: newSortDirection,
-		// 	};
-		// 	setSortState(newSortState);
-		// } else {
-		// 	newSortDirection = 'asc';
-		// 	newSortState = {
-		// 		...initialSortState,
-		// 		sortField: newSortColumn,
-		// 		sortDirection: newSortDirection,
-		// 	};
-		// 	setSortState(newSortState);
-		// }
-		dispatch(updateSortField(newSortColumn));
-	}
 }
 
 export default PaymentsGrid;

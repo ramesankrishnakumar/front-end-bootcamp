@@ -3,7 +3,7 @@ import {
 	updateSortField,
 	sortDirectionSelector,
 	sortFieldSelector,
-} from './payments-grid-slice';
+} from './SortStateSlice';
 import PaymentGridHeaderSortIndicator from './PaymentGridHeaderSortIndicator';
 import { useDispatch, useSelector } from 'react-redux';
 

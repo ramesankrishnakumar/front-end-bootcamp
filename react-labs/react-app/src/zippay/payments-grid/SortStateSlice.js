@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const gridSlice = createSlice({
-	name: 'paymentsGrid',
+	name: 'sortState',
 	initialState: {
 		sortField: '',
 		sortDirection: '',
@@ -22,7 +22,7 @@ const gridSlice = createSlice({
 		},
 	},
 });
-export const sortFieldSelector = (state) => state.paymentsGrid.sortField;
-export const sortDirectionSelector = (state) => state.paymentsGrid.sortDirection;
+export const sortFieldSelector = (state) => state.sortState.sortField;
+export const sortDirectionSelector = (state) => state.sortState.sortDirection;
 export const { updateSortField } = gridSlice.actions;
 export default gridSlice.reducer;

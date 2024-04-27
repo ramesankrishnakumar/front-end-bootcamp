@@ -1,8 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import gridReducer from './payments-grid/payments-grid-slice';
+import sortStateReducer from './payments-grid/SortStateSlice';
+import paymentsReducer, { fetchPayments } from './payments-grid/PaymentsSlice';
+
 
 export const store = configureStore({
 	reducer: {
-		paymentsGrid: gridReducer,
+		sortState: sortStateReducer,
+		payments: paymentsReducer
 	},
 });
+
+store.dispatch(fetchPayments());
+
